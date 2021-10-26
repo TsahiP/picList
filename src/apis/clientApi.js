@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 
 const clientApi = create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://herokupiclist.herokuapp.com',
 });
 
 export default clientApi;

@@ -8,7 +8,7 @@ const App = () => {
   const [picList, setPicList] = useState();
   useEffect(() => {
     loadPicList();
-  }, []);
+  }, [picList]);
   const loadPicList = async () => {
     const response = await picListService.handleGetPicList();
     // console.log(response);
