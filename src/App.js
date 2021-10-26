@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import picListService from './services/picListService';
+import PicListContext from './context/PicListContext';
+import PicList from './components/PicList';
+import AddItem from './components/AddItem';
+import ShopHeader from './components/ShopHeader';
+const App = () => {
+  const [picList, setPicList] = useState();
+  useEffect(() => {
+    loadPicList();
+  }, []);
+  const loadPicList = async () => {
+    const response = await picListService.handleGetPicList();
+    // console.log(response);
+    setPicList(response);
+  };
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PicListContext.Provider value={{ picList }}>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center' }}>
+          <ShopHeader className='App-header' />
+          <PicList />
+          <AddItem />
+        </div>
+      </div>
+    </PicListContext.Provider>
   );
-}
+};
 
 export default App;
