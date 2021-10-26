@@ -19,8 +19,8 @@ const App = () => {
     <PicListContext.Provider value={{ picList }}>
       <div style={{ textAlign: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <AddItem />
           <ShopHeader className='App-header' />
+          <AddItem />
           <PicList />
         </div>
       </div>
