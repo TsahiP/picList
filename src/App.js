@@ -11,7 +11,7 @@ const App = () => {
   }, [picList]);
   const loadPicList = async () => {
     const response = await picListService.handleGetPicList();
-    // console.log(response);
+    console.log(response);
     setPicList(response);
   };
 
@@ -19,9 +19,9 @@ const App = () => {
     <PicListContext.Provider value={{ picList }}>
       <div style={{ textAlign: 'center' }}>
         <div style={{ textAlign: 'center' }}>
+          <AddItem />
           <ShopHeader className='App-header' />
           <PicList />
-          <AddItem />
         </div>
       </div>
     </PicListContext.Provider>

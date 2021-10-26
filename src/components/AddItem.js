@@ -9,6 +9,7 @@ const AddItem = () => {
 
   const handleClick = () => {
     addNewItemService.handlePostNewItem(NewItem);
+    setNewItem('');
   };
 
   return (
