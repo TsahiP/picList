@@ -19,7 +19,7 @@ const AddItem = () => {
         <input
           type='text'
           name='itemName'
-          value={NewItem.name}
+          value={NewItem.itemName}
           placeholder='Search...'
           onChange={e => handleChange(e)}
         />
