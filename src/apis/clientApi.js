@@ -1,7 +1,7 @@
 import { create } from 'apisauce';
 
 const clientApi = create({
-  baseURL: 'https://herokupiclist.herokuapp.com',
+  baseURL: 'http://cs.cbtgroup.ml:27015/',
 });
 
 export default clientApi;
